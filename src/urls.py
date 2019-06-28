@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .core.views import DocumentCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page),
+    path('document/create/', DocumentCreateView.as_view()),
 ]
